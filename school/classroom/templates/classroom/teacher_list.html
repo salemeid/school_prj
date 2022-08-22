@@ -1,0 +1,17 @@
+<h1>List of Teachers (ListView)</h1>
+<ul>
+    {% for teacher in teacher_list %}
+        
+            <li>
+                <a href="/classroom/teacher_detail/{{teacher.id}}">{{teacher.first_name}} {{teacher.last_name}}</a>
+                <a href="/classroom/update_teacher/{{teacher.id}}">Edit..</a>
+                {% comment %} <form action="/classroom/update_teacher/{{teacher.id}}">
+                    <input type="submit" value="Edit" />
+                </form>                 {% endcomment %}
+                <a href="/classroom/delete_teacher/{{teacher.id}}">Delete..</a>
+            </li>
+        
+    {% endfor %}
+
+</ul>
+<p><a href="{% url "classroom:home" %}">Home Page</a></p>
